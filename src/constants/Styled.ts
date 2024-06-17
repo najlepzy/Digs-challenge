@@ -74,7 +74,7 @@ export const DayItem = styled.View`
   align-items: center;
   justify-content: flex-start;
   padding: 4px;
-  margin-top: ${Platform.OS === "ios" ? "-3px" : "-12px"};
+  margin-top: ${Platform.OS === "ios" ? "-3px" : "-3px"};
   margin-right: 12px;
   width: 60px;
 `;

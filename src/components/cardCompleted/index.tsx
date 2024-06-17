@@ -24,34 +24,41 @@ const CalendarContainerCompleted: React.FC<CalendarContainerProps> = ({
 }) => {
   return (
     <CalendarContainer>
-      {actions.map((action) => (
-        <DayContainer key={action.id}>
-          <DayItem>
-            <DayText>
-              {new Date(action.scheduledDate!)
-                .toLocaleDateString("en-US", { weekday: "short" })
-                .toUpperCase()}
-            </DayText>
-            <DateNumber>{new Date(action.scheduledDate!).getDate()}</DateNumber>
-            <SvgXml
-              xml={checkIcon}
-              width="23"
-              height="23"
-              style={{ marginTop: 8 }}
-            />
-          </DayItem>
-          <EventContainer>
-            <EventText>{action.name}</EventText>
-            <EventDescription>{action.vendor?.vendorName}</EventDescription>
-            <PhoneNumber>{action.vendor?.phoneNumber}</PhoneNumber>
-            <LocationContainer>
-              <SvgXml xml={pinIcon} width="13" height="13" />
-              <LocationText>{renderAddressText(action.vendor)}</LocationText>
-            </LocationContainer>
-            <StatusText>{action.status}</StatusText>
-          </EventContainer>
-        </DayContainer>
-      ))}
+      {actions.map((action) => {
+        const addressText = renderAddressText(action.vendor);
+        return (
+          <DayContainer key={action.id}>
+            <DayItem>
+              <DayText>
+                {new Date(action.scheduledDate!)
+                  .toLocaleDateString("en-US", { weekday: "short" })
+                  .toUpperCase()}
+              </DayText>
+              <DateNumber>
+                {new Date(action.scheduledDate!).getDate()}
+              </DateNumber>
+              <SvgXml
+                xml={checkIcon}
+                width="23"
+                height="23"
+                style={{ marginTop: 8 }}
+              />
+            </DayItem>
+            <EventContainer>
+              <EventText>{action.name}</EventText>
+              <EventDescription>{action.vendor?.vendorName}</EventDescription>
+              <PhoneNumber>{action.vendor?.phoneNumber}</PhoneNumber>
+              {addressText && (
+                <LocationContainer>
+                  <SvgXml xml={pinIcon} width="13" height="13" />
+                  <LocationText>{addressText}</LocationText>
+                </LocationContainer>
+              )}
+              <StatusText>{action.status}</StatusText>
+            </EventContainer>
+          </DayContainer>
+        );
+      })}
     </CalendarContainer>
   );
 };

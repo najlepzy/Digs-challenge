@@ -21,21 +21,26 @@ const CalendarContainerUnscheduled: React.FC<CalendarContainerProps> = ({
 }) => {
   return (
     <CalendarContainer>
-      {actions.map((action) => (
-        <DayContainer key={action.id}>
-          <DayItem>
-            <DayText>TBD</DayText>
-          </DayItem>
-          <EventContainerUnscheduled>
-            <EventText>{action.name}</EventText>
-            <LocationContainer>
-              <SvgXml xml={pinIcon} width="13" height="13" />
-              <LocationText>{renderAddressText(action.vendor)}</LocationText>
-            </LocationContainer>
-            <StatusText>{action.status}</StatusText>
-          </EventContainerUnscheduled>
-        </DayContainer>
-      ))}
+      {actions.map((action) => {
+        const addressText = renderAddressText(action.vendor);
+        return (
+          <DayContainer key={action.id}>
+            <DayItem>
+              <DayText>TBD</DayText>
+            </DayItem>
+            <EventContainerUnscheduled>
+              <EventText>{action.name}</EventText>
+              {addressText && (
+                <LocationContainer>
+                  <SvgXml xml={pinIcon} width="13" height="13" />
+                  <LocationText>{addressText}</LocationText>
+                </LocationContainer>
+              )}
+              <StatusText>{action.status}</StatusText>
+            </EventContainerUnscheduled>
+          </DayContainer>
+        );
+      })}
     </CalendarContainer>
   );
 };
