@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components/native";
 import { Colors } from "@/src/constants/Colors";
+import { Platform } from "react-native";
 
-// Base styles
 const baseTextStyles = css`
   color: white;
   font-size: 18px;
@@ -15,7 +15,6 @@ const baseContainerStyles = css`
   flex: 1;
 `;
 
-// Loader styles
 export const LoaderContainer = styled.View`
   flex: 1;
   justify-content: center;
@@ -29,7 +28,6 @@ export const LargeActivityIndicator = styled.ActivityIndicator.attrs(() => ({
   transform: scale(1.2);
 `;
 
-// Calendar styles
 export const Container = styled.View`
   flex: 1;
   padding: 16px;
@@ -75,8 +73,8 @@ export const DayContainer = styled.View`
 export const DayItem = styled.View`
   align-items: center;
   justify-content: flex-start;
-  padding: 10px;
-  margin-top: -12px;
+  padding: 4px;
+  margin-top: ${Platform.OS === "ios" ? "-3px" : "-12px"};
   margin-right: 12px;
   width: 60px;
 `;
