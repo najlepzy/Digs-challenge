@@ -1,6 +1,6 @@
 # Digs Calendar Code Challenge
 
-#This project was developed in an Android environment.
+## This project was developed in an Android environment.
 
 DEMO: https://www.loom.com/share/f97dd3ea01c24c9995b8aa740562663e
 
