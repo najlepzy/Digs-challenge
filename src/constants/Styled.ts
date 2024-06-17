@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components/native";
-import { Colors } from "./Colors";
+import { Colors } from "@/src/constants/Colors";
 
+// Base styles
 const baseTextStyles = css`
   color: white;
   font-size: 18px;
@@ -14,6 +15,21 @@ const baseContainerStyles = css`
   flex: 1;
 `;
 
+// Loader styles
+export const LoaderContainer = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LargeActivityIndicator = styled.ActivityIndicator.attrs(() => ({
+  size: "large",
+  color: Colors.green.primary,
+}))`
+  transform: scale(1.2);
+`;
+
+// Calendar styles
 export const Container = styled.View`
   flex: 1;
   padding: 16px;
@@ -82,8 +98,12 @@ const createEventContainer = (bgColor) => styled.View`
 `;
 
 export const EventContainer = createEventContainer(Colors.green.primary);
-export const EventContainerScheduled = createEventContainer(Colors.green.secondary);
-export const EventContainerUnscheduled = createEventContainer(Colors.blue.primary);
+export const EventContainerScheduled = createEventContainer(
+  Colors.green.secondary
+);
+export const EventContainerUnscheduled = createEventContainer(
+  Colors.blue.primary
+);
 export const EventContainerEmpty = createEventContainer(Colors.gray.primary);
 
 export const EventText = styled.Text`

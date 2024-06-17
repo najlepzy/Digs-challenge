@@ -4,6 +4,7 @@ import { Calendar } from "@/src/models/ChallengeData";
 
 const useSortedCalendarData = () => {
   const [calendarData, setCalendarData] = useState<Calendar[] | null>(null);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,6 +17,8 @@ const useSortedCalendarData = () => {
         setCalendarData(sortedCalendar);
       } catch (error) {
         console.error("Error fetching calendar data:", error);
+      } finally {
+        setLoading(false); 
       }
     };
 
@@ -33,7 +36,7 @@ const useSortedCalendarData = () => {
     });
   };
 
-  return calendarData;
+  return { calendarData, loading }; 
 };
 
 export default useSortedCalendarData;
