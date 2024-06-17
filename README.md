@@ -1,5 +1,7 @@
 # Digs Calendar Code Challenge
 
+#This project was developed in an Android environment.
+
 This is the candaidate test for Digs UI developers. It is NOT pass/fail. It is intended to provide insight into the range of your skill set. Please do what you can.
 
 ## Get started
@@ -13,7 +15,7 @@ This is the candaidate test for Digs UI developers. It is NOT pass/fail. It is i
    ```
 3. Start the app
    ```bash
-   npm expo start
+   npx expo start
    ```
 
 ## Instructions for the test
