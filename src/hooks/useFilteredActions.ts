@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getChallenge } from "@/src/services/calendar.service";
 import { Calendar } from "@/src/models/ChallengeData";
 
@@ -8,7 +8,7 @@ const useSortedCalendarData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getChallenge(); 
+        const data = await getChallenge();
         const sortedCalendar = data.calendar.map((month) => ({
           ...month,
           actions: sortActionsByDate(month.actions),
