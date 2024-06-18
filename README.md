@@ -1,8 +1,12 @@
 # Digs Calendar Code Challenge
 
-## This project was developed in an Android environment.
+## This project was developed in an Android & IOS environment not PWA.
 
-DEMO: https://www.loom.com/share/f97dd3ea01c24c9995b8aa740562663e
+### DEMO Android
+https://www.loom.com/share/a85d9a126560491a9929c3420a94c11e
+
+### DEMO IOS
+https://www.loom.com/share/a9effc79236e4271bd557ab683ac2549
 
 This is the candaidate test for Digs UI developers. It is NOT pass/fail. It is intended to provide insight into the range of your skill set. Please do what you can.
 
