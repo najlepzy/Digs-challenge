@@ -23,6 +23,10 @@ const CalendarContainerUnscheduled: React.FC<CalendarContainerProps> = ({
     <CalendarContainer>
       {actions.map((action) => {
         const addressText = renderAddressText(action.vendor);
+        const statusText =
+          action.status === "Unscheduled"
+            ? "Schedule date & time TBD"
+            : action.status;
         return (
           <DayContainer key={action.id}>
             <DayItem>
@@ -36,7 +40,7 @@ const CalendarContainerUnscheduled: React.FC<CalendarContainerProps> = ({
                   <LocationText>{addressText}</LocationText>
                 </LocationContainer>
               )}
-              <StatusText>{action.status}</StatusText>
+              <StatusText>{statusText} </StatusText>
             </EventContainerUnscheduled>
           </DayContainer>
         );

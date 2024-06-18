@@ -26,6 +26,11 @@ const CalendarContainerScheduled: React.FC<CalendarContainerProps> = ({
     <CalendarContainer>
       {actions.map((action) => {
         const addressText = renderAddressText(action.vendor);
+        const windowTimeText =
+          action.arrivalStartWindow && action.arrivalEndWindow
+            ? ` ${action.arrivalStartWindow} - ${action.arrivalEndWindow}`
+            : "";
+
         return (
           <DayContainer key={action.id}>
             <DayItem>
@@ -54,8 +59,7 @@ const CalendarContainerScheduled: React.FC<CalendarContainerProps> = ({
                   <LocationText>{addressText}</LocationText>
                 </LocationContainer>
               )}
-
-              <StatusText>{action.status}</StatusText>
+              <StatusText>{`${action.status}${windowTimeText}`}</StatusText>
             </EventContainerScheduled>
           </DayContainer>
         );
