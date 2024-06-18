@@ -3,10 +3,10 @@
 ## This project was developed in an Android & IOS environment not PWA.
 
 ### DEMO Android
-https://www.loom.com/share/a85d9a126560491a9929c3420a94c11e
+https://www.loom.com/share/c4ed84e67c5e4d65bbe7f43645426dd8
 
 ### DEMO IOS
-https://www.loom.com/share/a9effc79236e4271bd557ab683ac2549
+https://www.loom.com/share/b203f1e30a0c4bdabc3ee22cdb68dcf8
 
 This is the candaidate test for Digs UI developers. It is NOT pass/fail. It is intended to provide insight into the range of your skill set. Please do what you can.
 
